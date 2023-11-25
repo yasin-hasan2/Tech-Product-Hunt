@@ -1,18 +1,19 @@
 // import React from 'react';
-import logo from "../../../assets/img/logo/product-hunt-logo-horizontal-orange.png";
+import { Link } from "react-router-dom";
+import logo from "../../../assets/img/logo/Picsart_23-11-25_02-36-10-903.png";
 
 const NavBar = () => {
   const navOptions = (
     <>
       <ul tabIndex={0} className="menu lg:menu-horizontal px-1">
         <li>
-          <a>Item 1</a>
+          <Link to="/"> Home </Link>
         </li>
         <li>
-          <a> Item 2 </a>
+          <Link to="/product"> Product </Link>
         </li>
         <li>
-          <a>Item 3</a>
+          <Link> about </Link>
         </li>
       </ul>
     </>

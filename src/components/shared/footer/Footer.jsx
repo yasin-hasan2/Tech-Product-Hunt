@@ -1,6 +1,6 @@
 // import React from 'react';
 
-import logo from "../../../assets/img/logo/product-hunt-logo-horizontal-orange.png";
+import logo from "../../../assets/img/logo/Picsart_23-11-25_02-36-10-903.png";
 
 const Footer = () => {
   return (
@@ -35,7 +35,7 @@ const Footer = () => {
           <a className="link link-hover">Cookie policy</a>
         </nav>
       </footer>
-      <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+      <footer className="footer footer-center p-4 bg-slate-300 text-[#000000]">
         <aside>
           <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
         </aside>
