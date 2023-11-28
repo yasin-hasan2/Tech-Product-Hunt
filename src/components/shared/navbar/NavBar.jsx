@@ -1,11 +1,18 @@
-// import React from 'react';
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/img/logo/Picsart_23-11-25_02-36-10-903.png";
+
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
 const NavBar = () => {
   const navOptions = (
     <>
-      <ul tabIndex={0} className="menu lg:menu-horizontal px-1">
+      <ul
+        tabIndex={0}
+        className="menu text-lg text-[#FFFFFF] lg:menu-horizontal px-1"
+      >
         <li>
           <Link to="/"> Home </Link>
         </li>
@@ -13,11 +20,23 @@ const NavBar = () => {
           <Link to="/product"> Product </Link>
         </li>
         <li>
-          <Link> about </Link>
+          <Link to="/logIn"> Log In </Link>
+        </li>
+        <li>
+          <Link to="/signUp"> Sign Up </Link>
         </li>
       </ul>
     </>
   );
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <div>
@@ -53,7 +72,36 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <div>
+            <Button
+              id="demo-positioned-button"
+              aria-controls={open ? "demo-positioned-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+            >
+              Dashboard
+            </Button>
+            <Menu
+              id="demo-positioned-menu"
+              aria-labelledby="demo-positioned-button"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+            >
+              <MenuItem onClick={handleClose}>Profile</MenuItem>
+              <MenuItem onClick={handleClose}>My account</MenuItem>
+              <MenuItem onClick={handleClose}>Logout</MenuItem>
+            </Menu>
+          </div>
         </div>
       </div>
     </div>
