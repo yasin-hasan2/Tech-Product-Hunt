@@ -6,21 +6,20 @@ import { Pagination } from "swiper/modules";
 
 import { FaArrowRight } from "react-icons/fa";
 
-import slide1 from "../../../assets/img/product/banner1.webp";
-import slide2 from "../../../assets/img/product/banner2.webp";
-import slide3 from "../../../assets/img/product/banner3.png";
+import slide1 from "../../../assets/img/product/banner1.png";
+import slide2 from "../../../assets/img/product/banner2.jpg";
+import slide3 from "../../../assets/img/product/banner3.jpg";
 import slide4 from "../../../assets/img/product/banner7.jpg";
 import slide5 from "../../../assets/img/product/banner5.webp";
 // import slide6 from "../../../assets/img/product/banner9.png";
 import slide7 from "../../../assets/img/product/banner6.jpg";
-import slide8 from "../../../assets/img/product/banner8.webp";
 import { Link } from "react-router-dom";
 
 const Category = () => {
   return (
     <div>
       <div>
-        <h1 className=" text-center my-10 text-6xl mx-auto py-10 border-b-2 text-white border-white w-[40rem] ">
+        <h1 className=" text-center my-10 text-6xl mx-auto py-10 border-b-2 text-white border-white lg:w-[40rem] ">
           {" "}
           Trending Products{" "}
         </h1>
@@ -36,10 +35,10 @@ const Category = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <img src={slide1} alt="" />{" "}
+            <img className="w-96" src={slide1} alt="" />{" "}
           </SwiperSlide>
           <SwiperSlide>
-            <img className="w-96 h-96" src={slide2} alt="" />{" "}
+            <img className="w-96 " src={slide2} alt="" />{" "}
           </SwiperSlide>
           <SwiperSlide>
             <img className="w-96" src={slide3} alt="" />{" "}
@@ -53,9 +52,6 @@ const Category = () => {
 
           <SwiperSlide>
             <img className="w-96" src={slide7} alt="" />{" "}
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className="w-96 h-96" src={slide8} alt="" />{" "}
           </SwiperSlide>
         </Swiper>
       </div>

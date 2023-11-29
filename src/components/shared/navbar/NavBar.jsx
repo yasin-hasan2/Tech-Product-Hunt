@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/img/logo/Picsart_23-11-25_02-36-10-903.png";
 
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const NavBar = () => {
+  const { logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut().then().catch();
+  };
+
   const navOptions = (
     <>
       <ul
@@ -30,6 +39,7 @@ const NavBar = () => {
   );
 
   const [anchorEl, setAnchorEl] = useState(null);
+
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -99,7 +109,7 @@ const NavBar = () => {
             >
               <MenuItem onClick={handleClose}>Profile</MenuItem>
               <MenuItem onClick={handleClose}>My account</MenuItem>
-              <MenuItem onClick={handleClose}>Logout</MenuItem>
+              <MenuItem onClick={handleLogOut}>Logout</MenuItem>
             </Menu>
           </div>
         </div>

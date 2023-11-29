@@ -4,24 +4,44 @@ import { Link } from "react-router-dom";
 import login from "../../../../assets/img/logIn/undraw_login_re_4vu2.svg";
 import { useContext } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
+import { FaGooglePlusG } from "react-icons/fa";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// import { Toast } from "react-toastify/dist/components";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleSignIn } = useContext(AuthContext);
 
   const handleLogIn = (e) => {
     e.preventDefault();
-    const form = e.target;
-    const email = form.email.value;
-    const password = form.password.value;
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
     console.log(form, email, password);
 
     signIn(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
+        toast.success("user Login");
+        // Navigate(location?.this.state ? location.state : "/");
       })
       .catch((error) => {
         console.error(error);
+      });
+  };
+
+  const handleLoginWithGoogle = () => {
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        toast.success("user Login");
+        // Navigate(location?.this.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.log("error", error);
       });
   };
 
@@ -35,7 +55,7 @@ const Login = () => {
           <div className=" w-1/2   text-center lg:text-left">
             <img src={login} alt="" />
           </div>
-          <div className="   text-center  w-1/2    ">
+          <div className="   text-center  lg:w-1/2    ">
             <h1 className="text-5xl font-bold">Login now!</h1>
             <form onSubmit={handleLogIn} className="card-body">
               <div className="form-control">
@@ -73,6 +93,12 @@ const Login = () => {
                 </button>
               </div>
             </form>
+            <button
+              onClick={handleLoginWithGoogle}
+              className="btn  text-[#FFFFFF] hover:btn-ghost btn-outline bg-bgred "
+            >
+              <FaGooglePlusG className="text-3xl"></FaGooglePlusG>{" "}
+            </button>
             <p>
               If you are new In there{" "}
               <Link className="text-red-600 " to="/signUp">
@@ -82,6 +108,7 @@ const Login = () => {
             </p>
           </div>
         </div>
+        <ToastContainer />
       </div>
     </div>
   );

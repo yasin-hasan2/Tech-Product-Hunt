@@ -11,28 +11,16 @@ const SignUp = () => {
   const handleLogIn = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value;
+    const displayName = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, email, password);
+    const photoURL = form.photoUrl.value;
+    console.log(displayName, photoURL, email, password);
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
-        const createdAt = result.user?.metadata?.creationTime;
-
-        const users = { email, createdAt: createdAt };
-        fetch(
-          "https://luxury-hotel-server-52j29ybn6-yasins-projects-9cac5fb7.vercel.app/users",
-          {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(users),
-          }
-        );
       })
       .catch((error) => {
         console.error(error);
@@ -53,7 +41,7 @@ const SignUp = () => {
             <div className=" w-1/2   text-center lg:text-left">
               <img src={signUp} alt="" />
             </div>
-            <div className="   text-center  w-1/2    ">
+            <div className="   text-center  lg:w-1/2    ">
               <h1 className="text-5xl font-bold"> SignUp now!</h1>
               <form onSubmit={handleLogIn} className="card-body">
                 <div className="form-control">
@@ -65,6 +53,7 @@ const SignUp = () => {
                     placeholder="Name"
                     name="name"
                     className="input input-bordered"
+                    required
                   />
                 </div>
                 <div className="form-control">
@@ -87,6 +76,23 @@ const SignUp = () => {
                     type="password"
                     placeholder="password"
                     name="password"
+                    className="input input-bordered"
+                    required
+                  />
+                  <label className="label">
+                    <a href="#" className="label-text-alt link link-hover">
+                      Forgot password?
+                    </a>
+                  </label>
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text"> Photo URL </span>
+                  </label>
+                  <input
+                    type="url"
+                    placeholder="PhotoUrl"
+                    name="photoUrl"
                     className="input input-bordered"
                     required
                   />

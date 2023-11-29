@@ -4,7 +4,7 @@
       "name": "Wireless Headphones",
       "image": "https://i.ibb.co/kDFzgCp/2410-3-skullcandy-hesh-anc-noise-canceling-wireless-headp-7ca4ede9f5c7e4b65d10ad06e5251132.jpg",
       "description": "High-quality wireless headphones with noise cancellation and immersive sound experience.",
-      "tags": ["wireless", "headphones", "audio"],
+      "tags": "wireless",
       "external_links": ["https://example.com/wireless-headphones"],
       "upvote_count": 135,
       "price": 750
@@ -15,7 +15,7 @@
       "name": "Smartwatch",
       "image": "https://i.ibb.co/cgCK02s/Smart-Watch-COLMi-M41-Black-Left-View.jpg",
       "description": "A feature-rich smartwatch with fitness tracking, notifications, and customizable watch faces.",
-      "tags": ["smartwatch", "wearable", "fitness"],
+      "tags": "smartwatch",
       "external_links": ["https://example.com/smartwatch"],
       "upvote_count": 98,
       "price": 999
@@ -26,7 +26,7 @@
       "name": "Portable Bluetooth Speaker",
       "image": "https://i.ibb.co/F7W38sV/jbl-boombox-2-black-portable-bluetooth-speaker-11610949849.webp",
       "description": "Compact and powerful Bluetooth speaker for on-the-go music enthusiasts.",
-      "tags": ["bluetooth", "speaker", "portable"],
+      "tags": "bluetooth",
       "external_links": ["https://example.com/bluetooth-speaker"],
       "upvote_count": 115,
       "price": 610
@@ -36,7 +36,7 @@
       "name": "Laptop Backpack",
       "image": "https://i.ibb.co/gWYTSwL/9c1cef4d-c61b-4df6-b3c8-3a05b2e07572.png",
       "description": "Durable and spacious backpack with dedicated compartments for laptops and accessories.",
-      "tags": ["backpack", "laptop", "travel"],
+      "tags": "backpack",
       "external_links": ["https://example.com/laptop-backpack"],
       "upvote_count": 78,
       "price": 480
@@ -48,7 +48,7 @@
       "name": "Wireless Mouse",
       "image": "https://i.ibb.co/56q5LHs/logitech-mx-master-2s-wireless-mouse-1-1000x1000-png-1000x1000.png",
       "description": "Ergonomic wireless mouse for smooth and precise computer navigation.",
-      "tags": ["mouse", "wireless", "ergonomic"],
+      "tags": "mouse",
       "external_links": ["https://example.com/wireless-mouse"],
       "upvote_count": 62,
       "price": 577
@@ -59,7 +59,7 @@
       "name": "Digital Camera",
       "image": "https://i.ibb.co/xLfWvMf/d7c4c5245d5a7307e62dee23a15b366e.jpg",
       "description": "High-resolution digital camera with advanced features for photography enthusiasts.",
-      "tags": ["camera", "digital", "photography"],
+      "tags": "camera",
       "external_links": ["https://example.com/digital-camera"],
       "upvote_count": 88,
       "price": 1192

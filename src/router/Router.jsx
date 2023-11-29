@@ -6,6 +6,7 @@ import SignUp from "../components/pages/account/signUp/SignUp";
 import Login from "../components/pages/account/login/Login";
 import Product from "../components/pages/product/Product";
 import Dashboard from "../components/shared/dashboard/Dashboard";
+import PrivateRouter from "./PrivateRouter";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/product",
-        element: <Product></Product>,
+        element: (
+          <PrivateRouter>
+            <Product></Product>
+          </PrivateRouter>
+        ),
         loader: () => fetch("http://localhost:5000/products"),
       },
       {
