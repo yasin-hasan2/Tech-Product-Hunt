@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ProductCard from "../productCard/ProductCard";
+import { Link } from "react-router-dom";
 
 const Featured = () => {
   const [product, setProduct] = useState([]);
@@ -29,13 +30,15 @@ const Featured = () => {
       </div>
       <div className={productLength === product.length ? "hidden  " : ""}>
         <div className="flex justify-center mt-5 ">
-          <button
-            onClick={() => setProductLength(product.length)}
-            className=" btn-outline flex items-center justify-center btn hover:btn-ghost text-white "
-          >
-            {" "}
-            see all{" "}
-          </button>
+          <Link to="/product">
+            <button
+              onClick={() => setProductLength(product)}
+              className=" btn-outline flex items-center justify-center btn hover:btn-ghost text-white "
+            >
+              {" "}
+              see all{" "}
+            </button>
+          </Link>
         </div>
       </div>
     </div>
