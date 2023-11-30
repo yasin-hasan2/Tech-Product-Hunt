@@ -36,9 +36,17 @@ const Login = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        console.log(user.email);
         toast.success("user Login");
         // Navigate(location?.this.state ? location.state : "/");
+
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+        });
       })
       .catch((error) => {
         console.log("error", error);

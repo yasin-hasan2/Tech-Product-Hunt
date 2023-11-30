@@ -7,6 +7,8 @@ import Login from "../components/pages/account/login/Login";
 import Product from "../components/pages/product/Product";
 import Dashboard from "../components/shared/dashboard/Dashboard";
 import PrivateRouter from "./PrivateRouter";
+import ProductDetails from "../components/shared/productDetails/ProductDetails";
+import Profile from "../components/pages/profile/Profile";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,16 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/products"),
       },
       {
+        path: "details/:id",
+        element: (
+          <PrivateRouter>
+            <ProductDetails></ProductDetails>
+          </PrivateRouter>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
+      },
+      {
         path: "/dashboard",
         element: <Dashboard></Dashboard>,
       },
@@ -38,6 +50,11 @@ const router = createBrowserRouter([
       {
         path: "/logIn",
         element: <Login></Login>,
+      },
+      {
+        path: "/profile",
+        element: <Profile></Profile>,
+        loader: () => fetch("http://localhost:5000/users"),
       },
     ],
   },

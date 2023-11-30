@@ -10,7 +10,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const NavBar = () => {
-  const { logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
     logOut().then().catch();
@@ -28,9 +28,7 @@ const NavBar = () => {
         <li>
           <Link to="/product"> Product </Link>
         </li>
-        <li>
-          <Link to="/logIn"> Log In </Link>
-        </li>
+
         <li>
           <Link to="/signUp"> Sign Up </Link>
         </li>
@@ -82,36 +80,48 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
         <div className="navbar-end">
-          <div>
-            <Button
-              id="demo-positioned-button"
-              aria-controls={open ? "demo-positioned-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
-              onClick={handleClick}
-            >
-              Dashboard
-            </Button>
-            <Menu
-              id="demo-positioned-menu"
-              aria-labelledby="demo-positioned-button"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-            >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
-              <MenuItem onClick={handleClose}>My account</MenuItem>
-              <MenuItem onClick={handleLogOut}>Logout</MenuItem>
-            </Menu>
-          </div>
+          {user?.email ? (
+            <div>
+              <Button
+                id="demo-positioned-button"
+                aria-controls={open ? "demo-positioned-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
+              >
+                Dashboard
+              </Button>
+              <Menu
+                id="demo-positioned-menu"
+                aria-labelledby="demo-positioned-button"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+              >
+                <MenuItem onClick={handleClose}>
+                  {" "}
+                  <Link to="/profile"> Profile </Link>{" "}
+                </MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleClose}>
+                  {" "}
+                  <button onClick={handleLogOut}> Logout </button>{" "}
+                </MenuItem>
+              </Menu>
+            </div>
+          ) : (
+            <li className=" list-none text-white ">
+              <Link to="/logIn"> Log In </Link>
+            </li>
+          )}
         </div>
       </div>
     </div>

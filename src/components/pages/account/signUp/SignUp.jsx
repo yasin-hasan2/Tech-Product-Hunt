@@ -21,6 +21,15 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+
+        const users = { email, displayName, photoURL };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(users),
+        });
       })
       .catch((error) => {
         console.error(error);
@@ -94,7 +103,6 @@ const SignUp = () => {
                     placeholder="PhotoUrl"
                     name="photoUrl"
                     className="input input-bordered"
-                    required
                   />
                   <label className="label">
                     <a href="#" className="label-text-alt link link-hover">
