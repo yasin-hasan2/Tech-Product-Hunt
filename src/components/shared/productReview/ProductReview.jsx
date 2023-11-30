@@ -9,7 +9,9 @@ const ProductReview = () => {
   const [review, setReview] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/review")
+    fetch(
+      " https://product-hunt-server-lg4w4n8dn-yasins-projects-9cac5fb7.vercel.app/review"
+    )
       .then((res) => res.json())
       .then((data) => setReview(data));
   }, []);

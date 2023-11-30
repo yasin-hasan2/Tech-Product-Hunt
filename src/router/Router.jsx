@@ -27,7 +27,10 @@ const router = createBrowserRouter([
             <Product></Product>
           </PrivateRouter>
         ),
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () =>
+          fetch(
+            " https://product-hunt-server-lg4w4n8dn-yasins-projects-9cac5fb7.vercel.app/products"
+          ),
       },
       {
         path: "details/:id",
@@ -37,7 +40,9 @@ const router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            ` https://product-hunt-server-lg4w4n8dn-yasins-projects-9cac5fb7.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/dashboard",
@@ -54,7 +59,10 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile></Profile>,
-        loader: () => fetch("http://localhost:5000/users"),
+        loader: () =>
+          fetch(
+            " https://product-hunt-server-lg4w4n8dn-yasins-projects-9cac5fb7.vercel.app/users"
+          ),
       },
     ],
   },

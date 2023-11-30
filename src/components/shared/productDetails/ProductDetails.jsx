@@ -22,13 +22,16 @@ const ProductDetails = () => {
     const userPhoto = user?.photoURL;
     const usersCommentDetails = { userComment, userEmail, userName, userPhoto };
     console.log(usersCommentDetails);
-    fetch("http://localhost:5000/review", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(usersCommentDetails),
-    })
+    fetch(
+      " https://product-hunt-server-lg4w4n8dn-yasins-projects-9cac5fb7.vercel.app/review",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(usersCommentDetails),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

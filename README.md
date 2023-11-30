@@ -1,8 +1,7 @@
-# React + Vite
+#Bunty tech
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#this is the product post and review website
+#this website build react and also many component library
+#there used css framework and tailwind and also daisyUi
+#and there use swiper , tostify , and many more
+#and used firebase for authentication

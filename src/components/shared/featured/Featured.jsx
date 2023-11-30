@@ -10,7 +10,9 @@ const Featured = () => {
   const [productLength, setProductLength] = useState([4]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch(
+      " https://product-hunt-server-lg4w4n8dn-yasins-projects-9cac5fb7.vercel.app/products"
+    )
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);

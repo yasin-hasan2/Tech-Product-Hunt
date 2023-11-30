@@ -40,13 +40,16 @@ const Login = () => {
         toast.success("user Login");
         // Navigate(location?.this.state ? location.state : "/");
 
-        fetch("http://localhost:5000/users", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(user),
-        });
+        fetch(
+          " https://product-hunt-server-lg4w4n8dn-yasins-projects-9cac5fb7.vercel.app/users",
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(user),
+          }
+        );
       })
       .catch((error) => {
         console.log("error", error);

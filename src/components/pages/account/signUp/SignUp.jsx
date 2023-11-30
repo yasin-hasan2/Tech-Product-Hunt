@@ -23,13 +23,16 @@ const SignUp = () => {
         console.log(user);
 
         const users = { email, displayName, photoURL };
-        fetch("http://localhost:5000/users", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(users),
-        });
+        fetch(
+          " https://product-hunt-server-lg4w4n8dn-yasins-projects-9cac5fb7.vercel.app/users",
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(users),
+          }
+        );
       })
       .catch((error) => {
         console.error(error);
