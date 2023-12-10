@@ -3,18 +3,18 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../productCard/ProductCard";
 import { Link } from "react-router-dom";
+import { data } from "autoprefixer";
 
 const Featured = () => {
   const [product, setProduct] = useState([]);
-
+  console.log(product);
   const [productLength, setProductLength] = useState([4]);
 
   useEffect(() => {
-    fetch(
-      " https://product-hunt-server-lg4w4n8dn-yasins-projects-9cac5fb7.vercel.app/products"
-    )
+    fetch("https://product-hunt-server.vercel.app/products")
       .then((res) => res.json())
       .then((data) => setProduct(data));
+    console.log(data);
   }, []);
 
   return (
