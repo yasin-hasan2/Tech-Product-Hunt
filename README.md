@@ -8,5 +8,5 @@
 
 #\* all in all a full stack project
 
-- [Git Link ](https://github.com/yasin-hasan2/Hotel-Luxury?tab=readme-ov-file)
+- [Git Link ](https://github.com/yasin-hasan2/Tech-Product-Hunt)
 - [Live Link](https://bunty-tech.web.app/)
